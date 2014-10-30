@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Starcraft Rankings</title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+<div ng-app='myApp' class = 'container'>
+	<h1>USERS</h1>
+		
+		<!-- Search function box, you can also do search.name to only search names, etc. -->
+		<input type="text" placeholder="Search users" ng-model="search.$">
+
+		<!-- Tell the table to make use of the TablCtrl function -->
+		<table ng-controller='TableCtrl'>
+
+			<thead>
+				<tr> 
+					<th id = 'name'>Name</th>
+					<th id = 'gender'>Gender</th>
+					<th id='age'>Age</th>
+					<th id='email'>Email</th>
+					<th id= 'phone'>Phone</th>
+					<th id= 'location'>Location</th>
+				</tr>
+			</thead>
+
+			<!-- Use ng-repeat to dynamically repeat the rows of user data -->
+			<tbody ng-repeat="user in users | filter: search | orderBy:predicate">
+				<tr>
+					<td>{{user.name}}</td>
+					<td>{{user.gender}}</td>
+					<td>{{user.age}}</td>
+					<td>{{user.email}}</td>
+					<td>{{user.phone}}</td>
+					<td>{{user.location}}</td>
+				</tr>
+			</tbody>
+
+
+		</table>
+
+	<ol class = "paginate">
+		<li id='page1'>prev</li>
+		<li>first</li>
+		<li id= 'page1'>1</li>
+		<li id= 'page2'>2</li>
+		<li id= 'page3'>3</li>
+		<li id='page4'>4</li>
+		<li id='page5'>5</li>
+		<li id='page5'>last</li>
+		<li>next</li>
+	</ol>
+
+</div> <!-- End container -->
+
+
+	<!-- jQuery -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<!-- underscore - must be BEFORE your main.js file -->
+	<script src = "http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+	<!-- Angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<!-- Dummy data: -->
+	<script src= "dummy-data.js"></script>
+	<script src="main.js"></script>
+
+</body>
+</html>
