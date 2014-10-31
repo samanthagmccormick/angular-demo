@@ -29,8 +29,8 @@
 			</thead>
 
 			<!-- Use ng-repeat to dynamically repeat the rows of user data -->
-			<tbody ng-repeat="user in users | filter: search | orderBy:predicate">
-				<tr>
+			<tbody>
+				<tr ng-repeat="user in users | filter: search | orderBy:predicate" ng-class-even="'even'">
 					<td>{{user.name}}</td>
 					<td>{{user.gender}}</td>
 					<td>{{user.age}}</td>
@@ -65,8 +65,8 @@
 	<!-- Angular -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 	<!-- Dummy data: -->
-	<script src= "dummy-data.js"></script>
 	<script src="main.js"></script>
+	<script src= "data.js"></script>
 
 </body>
 </html>

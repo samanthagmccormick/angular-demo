@@ -52,3 +52,7 @@ table {
 .paginate span li {
 	padding-left: 0;
 }
+
+.even {
+	background-color: navajowhite;
+}
