@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Starcraft Rankings</title>
+  <title>People</title>
   <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
@@ -10,6 +10,19 @@
 
 <div ng-app='myApp' class = 'container'>
 	<h1>USERS</h1>
+
+	<h3>Add New User:</h3>
+	<div ng-controller="formController">
+		<form>
+			<input type="text" name="name" placeholder="Name…" ng-model="addForm.name">
+			<input type="text" name="gender" placeholder="Gender…" ng-model="addForm.gender">
+			<input type="number" name="age" placeholder="Age" ng-model="addForm.age">
+			<input type="email" name="email" placeholder="Email…" ng-model="addForm.email">
+			<input type="tel" name="phone" placeholder="(555) 555-5555" ng-model="addForm.phone"> 
+			<input type="text" name="location" placeholder="Location…" ng-model="addForm.location">
+			<button ng-click="submitForm(addForm)">Submit</button>
+		</form>
+	</div>
 		
 		<!-- Search function box, you can also do search.name to only search names, etc. -->
 		<input type="text" placeholder="Search users" ng-model="search.$">
